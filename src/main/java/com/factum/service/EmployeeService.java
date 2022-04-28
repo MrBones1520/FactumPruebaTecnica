@@ -7,12 +7,10 @@ import com.factum.controller.response.JobResponse;
 import com.factum.model.Employee;
 import com.factum.repository.EmployeeRepository;
 import com.factum.repository.GenderRepository;
-import com.factum.repository.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.Iterator;
 import java.util.Objects;
 
 @Service

@@ -2,6 +2,7 @@ package com.factum.service;
 
 
 import com.factum.controller.request.EmployeeHourRequest;
+import com.factum.controller.request.EmployeePaymentsResponse;
 import com.factum.controller.request.EmployeeWorkedRequest;
 import com.factum.controller.response.EmployeeHourResponse;
 import com.factum.controller.response.EmployeeWorkedResponse;
@@ -22,6 +23,8 @@ public class EmployeeWorkedService {
 
     private final static EmployeeHourResponse ERROR_WORKED_RESPONSE = new EmployeeHourResponse(0, false);
 
+    private final static EmployeePaymentsResponse ERROR_PAYMENTS_RESPONSE = new EmployeePaymentsResponse();
+
     @Autowired
     public EmployeeWorkedService(
         EmployeeService employeeService,
@@ -34,7 +37,8 @@ public class EmployeeWorkedService {
     public boolean checkDataWorked(EmployeeWorkedRequest request){
         return (
             employeeService.existById(request.getEmployee_id()) &&
-            request.getWorked_hours() < 20
+            request.getWorked_hours() < 20 &&
+            this.employeeService.existById(request.getEmployee_id())
         );
     }
 
@@ -59,4 +63,5 @@ public class EmployeeWorkedService {
 
         return ResponseEntity.ok(new EmployeeHourResponse(iterable));
     }
+
 }

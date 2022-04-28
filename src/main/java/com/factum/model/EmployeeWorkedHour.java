@@ -10,6 +10,7 @@ import java.sql.Date;
 
 @Entity
 @Data
+@Table(indexes = {@Index(name = "mulitIndex2", columnList = "employee_id, worked_date")})
 @NoArgsConstructor
 public class EmployeeWorkedHour {
 
@@ -18,7 +19,7 @@ public class EmployeeWorkedHour {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "employee_id")
     private Employee employee;
 
