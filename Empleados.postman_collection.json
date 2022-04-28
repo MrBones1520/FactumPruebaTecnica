@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "f1367a6b-0cfd-483e-8d20-cfc2a66852d3",
+		"name": "Empleados",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear empleado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"asdd\",\r\n    \"gender_id\": 1,\r\n    \"job_id\": 2,\r\n    \"last_name\": \"asdfsdaf\",\r\n    \"birthdate\": \"29/12/1997\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Empleados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employee/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Horas Trabajadas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employee_id\": 1,\r\n    \"worked_hours\": 19,\r\n    \"worked_date\": \"27/04/2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee-worked/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee-worked",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar empleados por empleo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"job_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/job",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver horas totales de empleado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee-worked/total-worked",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee-worked",
+						"total-worked"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
