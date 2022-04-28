@@ -23,4 +23,12 @@ public class JobService {
         this.jobRepository.save(new Job("Contabilidad", 45000.00));
     }
 
+    public Job get(long id){
+        return this.jobRepository.findById(id).orElse(null);
+    }
+
+    public boolean existsById(long id){
+        return this.jobRepository.existsById(id);
+    }
+
 }
